@@ -1,0 +1,187 @@
+/* --- ГЛОБАЛЬНЫЕ СТИЛИ --- */
+:root {
+    --primary-color: #e74c3c; /* Красный, привлекающий внимание */
+    --secondary-color: #34495e; /* Темно-синий, профессиональный */
+    --background-light: #f9f9f9;
+    --text-dark: #333;
+    --text-light: #ffffff;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Центральный контейнер для контента */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px; /* Отступы по бокам для мобильных */
+}
+
+/* Общие стили для заголовков секций */
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    color: var(--secondary-color);
+    margin-bottom: 40px;
+}
+
+/* --- ШАПКА (HERO SECTION) --- */
+.hero-section {
+    background: var(--secondary-color);
+    color: var(--text-light);
+    padding: 30px 0;
+    text-align: center;
+}
+
+.logo p {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+.logo span {
+    font-size: 0.8em;
+    opacity: 0.8;
+}
+
+/* --- КНОПКА CTA (ПРИЗЫВ К ДЕЙСТВИЮ) --- */
+.cta-button {
+    display: block;
+    text-decoration: none;
+    background: var(--primary-color);
+    color: var(--text-light);
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.cta-button:hover {
+    background-color: #c0392b; /* Более темный красный при наведении */
+}
+
+.large-cta {
+    font-size: 2em;
+    padding: 15px 20px;
+    max-width: 300px; /* Ограничиваем размер кнопки */
+}
+
+.large-cta small {
+    display: block;
+    font-size: 0.5em;
+    margin-top: 5px;
+}
+
+/* --- СЕКЦИИ ПРЕИМУЩЕСТВ (FEATURES) --- */
+.features-section {
+    padding: 50px 0;
+    background-color: var(--background-light);
+}
+
+.features-grid {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет элементам переноситься на мобильных */
+    gap: 30px;
+    justify-content: center;
+}
+
+.feature-item {
+    flex: 1 1 300px; /* Элемент занимает 300px, но может сжиматься/растягиваться */
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Стили для ваших анимированных иконок */
+.animated-icon-placeholder {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+}
+
+.icon-placeholder {
+    width: 100%;
+    height: 100%;
+    /* Если это будет Lottie, то LottieJS сам вставит SVG */
+}
+
+/* --- СЕКЦИЯ УСЛУГ (SERVICES) --- */
+.services-section {
+    padding: 50px 0;
+    background-color: #ecf0f1;
+}
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.service-card {
+    flex: 1 1 300px;
+    background: var(--text-light);
+    padding: 20px;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+/* --- ПОДВАЛ (FOOTER) --- */
+footer {
+    background: var(--secondary-color);
+    color: var(--text-light);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-contact-title {
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+.footer-cta {
+    font-size: 1.5em;
+    padding: 10px 15px;
+    max-width: 250px;
+}
+
+.copyright {
+    margin-top: 30px;
+    opacity: 0.7;
+}
+
+/* --- АДАПТИВНОСТЬ (МОБИЛЬНЫЕ УСТРОЙСТВА) --- */
+@media (max-width: 768px) {
+    
+    /* Уменьшаем шрифты на маленьких экранах */
+    .section-title {
+        font-size: 1.5em;
+    }
+    
+    .large-cta {
+        font-size: 1.5em;
+        padding: 15px 10px;
+    }
+    
+    .large-cta small {
+        font-size: 0.6em;
+    }
+
+    /* Делаем сетки услуг и преимуществ вертикальными */
+    .features-grid, .services-grid {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .feature-item, .service-card {
+        flex: 1 1 100%; /* Занимают 100% ширины */
+    }
+}
